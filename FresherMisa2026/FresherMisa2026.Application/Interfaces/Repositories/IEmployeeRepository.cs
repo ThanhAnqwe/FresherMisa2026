@@ -1,4 +1,5 @@
 using FresherMisa2026.Entities.Employee;
+using FresherMisa2026.Entities;
 using System;
 using System.Collections.Generic;
 
@@ -11,7 +12,7 @@ namespace FresherMisa2026.Application.Interfaces.Repositories
         Task<IEnumerable<Employee>> GetEmployeesByPositionId(Guid positionId);
 
         //Filter nhân viên
-        Task<IEnumerable<Employee>> GetEmployeesByFilterAsync(Guid? departmentId, Guid? positionId, decimal? salaryFrom, decimal? salaryTo, int? gender, DateTime? hireDateFrom, DateTime? hireDateTo);
+        Task<PagingResponse<Employee>> GetEmployeesByFilterAsync(Guid? departmentId, Guid? positionId, decimal? salaryFrom, decimal? salaryTo, int? gender, DateTime? hireDateFrom, DateTime? hireDateTo, int pageSize, int pageIndex);
 
 
         // Kiểm tra mã nhân viên đã tồn tại hay chưa
